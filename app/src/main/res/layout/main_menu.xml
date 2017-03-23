@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Main_Menu">
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/movie_poster_grid"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnWidth="@dimen/movie_poster_grid_colwid"
+    android:numColumns="3"
+    android:verticalSpacing="@dimen/movie_poster_grid_spacing"
+    android:horizontalSpacing="@dimen/movie_poster_grid_spacing"
+    android:stretchMode="columnWidth"
+    android:gravity="center"
+    android:clickable="true" />
+    </FrameLayout>
