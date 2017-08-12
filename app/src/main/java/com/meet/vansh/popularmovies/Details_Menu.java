@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.mkds622.android.asynclibrary.ASyncLibrary;
+import com.mkds622.android.asynclibrary.PhotoView;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONException;
@@ -34,7 +36,7 @@ public class Details_Menu extends Fragment {
         URL img_url;
         JSONObject J1= new JSONObject(jsonMovieDetail);
         //setting image thumbnail
-        ImageView I1=(ImageView)rootview.findViewById(R.id.MoviePosterThumbnail);
+        PhotoView I1=(PhotoView)rootview.findViewById(R.id.MoviePosterThumbnail);
         final String baseurl="http://image.tmdb.org/t/p/w780/";
         String img_link=J1.getString("poster_path");
         String builduri=new String();
@@ -45,7 +47,9 @@ public class Details_Menu extends Fragment {
             builduri = baseurl + img_link;
             try {
                 img_url = new URL(builduri.toString());
-                Picasso.with(getContext()).load(img_url.toString()).into(I1);
+                //Picasso.with(getContext()).load(img_url.toString()).into(I1);
+                ASyncLibrary x=ASyncLibrary.with(getContext());
+                x.load(img_url.toString()).into(I1);
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }

@@ -10,12 +10,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-    <ImageView
+    <com.mkds622.android.asynclibrary.PhotoView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:id="@+id/MoviePosterThumbnail"
-        android:layout_gravity="center_horizontal"
-        android:src="@android:mipmap/sym_def_app_icon" />
+        android:layout_gravity="center_horizontal"/>
+        <!--android:src="@android:mipmap/sym_def_app_icon" -->
+
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="horizontal"

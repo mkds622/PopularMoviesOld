@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
+import com.mkds622.android.asynclibrary.ASyncLibrary;
+import com.mkds622.android.asynclibrary.PhotoView;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -25,13 +27,14 @@ public class MovieAdapter extends ArrayAdapter<MoviePoster> {
         if(convertView==null){
             convertView= LayoutInflater.from(getContext()).inflate(R.layout.movie_poster_layout,parent,false);
         }
-        ImageView movie=(ImageView)convertView.findViewById(R.id.MovieButton);
+        PhotoView movie=(PhotoView) convertView.findViewById(R.id.MovieButton);
         if(moviePoster.img_url==null)
         {
         movie.setImageResource(R.mipmap.image_not_found);
         }
         else
-        Picasso.with(getContext()).load(moviePoster.img_url.toString()).into(movie);
+        //Picasso.with(getContext()).load(moviePoster.img_url.toString()).into(movie);
+            ASyncLibrary.with(getContext()).load(moviePoster.img_url.toString()).into(movie);
         return convertView;
     }
 }

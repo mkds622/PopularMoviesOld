@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.mkds622.android.asynclibrary.PhotoView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/movie_poster_width"
     android:layout_height="@dimen/movie_poster_height"
     android:id="@+id/MovieButton"/>
